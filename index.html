@@ -40,7 +40,7 @@
                     :src="images[activeIndex].image"
                     :alt="images[activeIndex].title"
                   />
-                  <div class="item-description px-3">
+                  <div v-for="item in images" class="item-description px-3">
                     <h2>{{images[activeIndex].title}}</h2>
                     <p>{{images[activeIndex].text}}</p>
                   </div>
@@ -50,13 +50,18 @@
               <div class="my-thumbnails position-relative">
                 <!-- prev -->
                 <div class="my-previous position-absolute">
-                  <span class="my-prev-hook"></span>
+                  <span @click="showPrev" class="my-prev-hook"></span>
                 </div>
                 <!-- next -->
                 <div class="my-next position-absolute">
-                  <span class="my-next-hook"></span>
+                  <span @click="showNext" class="my-next-hook"></span>
                 </div>
                 <!-- immagini interne -->
+                <img
+                    class="img-fluid my-thumbnail active"
+                    :src="images[activeIndex].image"
+                    :alt="images[activeIndex].title"
+                  />
   
                 <!-- etc ... -->
               </div>

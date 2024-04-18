@@ -30,21 +30,6 @@
 
 
 
-// function showNext() {
-//   imageElems[activeIndex].classList.remove("active")
-//   thumbnailElems[activeIndex].classList.remove("active")
-
-
-//   if (activeIndex < imageElems.length - 1){
-//     activeIndex++;
-//   } else {
-//     activeIndex = 0
-//   }
-
-//   imageElems[activeIndex].classList.add("active")
-//   thumbnailElems[activeIndex].classList.add("active");
-// }
-
 // function showPrev () {
 //   imageElems[activeIndex].classList.remove("active")
 //   thumbnailElems[activeIndex].classList.remove("active")
@@ -74,16 +59,15 @@
 // function backward () {
 //   clearInterval(carouselLoop)
 //   let backwardCarouselLoop = setInterval (showPrev, 3000)
-  
+
 // }
 
 const { createApp } = Vue;
 
-createApp ({
-  data(){
+createApp({
+  data() {
     return {
       greeting: "Say Hello",
-      activeIndex: 0,
       images: [
         {
           image: "./img/01.webp",
@@ -111,9 +95,25 @@ createApp ({
           text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
         },
       ],
+      activeIndex: 0,
     };
   },
   methods: {
+    showNext: function () {
+      if (this.activeIndex < this.images.length - 1) {
+        this.activeIndex++;
+      } else {
+        this.activeIndex = 0
+      }
+    },
 
+    showPrev: function () {
+      if (this.activeIndex > 0) {
+        this.activeIndex--;
+      } else {
+        this.activeIndex = this.images.length - 1;
+      }
+    }
   }
 }).mount("#app");
+
