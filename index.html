@@ -57,12 +57,12 @@
                   <span @click="showNext" class="my-next-hook"></span>
                 </div>
                 <!-- immagini interne -->
-                <img
-                    class="img-fluid my-thumbnail active"
-                    :src="images[activeIndex].image"
-                    :alt="images[activeIndex].title"
+                  <img v-for = "(image, index) in images"
+                    class="img-fluid my-thumbnail"
+                    :class = "(index === activeIndex) ? 'active' : ''"
+                    :src='images[index].image'
+                    :alt="images[index].text"
                   />
-  
                 <!-- etc ... -->
               </div>
             </div>
