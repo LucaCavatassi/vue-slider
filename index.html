@@ -57,7 +57,9 @@
                   <span @click="showNext" class="my-next-hook"></span>
                 </div>
                 <!-- immagini interne -->
-                  <img v-for = "(image, index) in images"
+                  <img 
+                    v-for = "(image, index) in images"
+                    @click = "showOnClick(index)"
                     class="img-fluid my-thumbnail"
                     :class = "(index === activeIndex) ? 'active' : ''"
                     :src='images[index].image'

@@ -49,7 +49,6 @@ createApp({
         },
       ],
       activeIndex: 0,
-      isActiveBoo: false,
     };
   },
   methods: {
@@ -69,5 +68,11 @@ createApp({
       }
     },
 
+    showOnClick: function (index) {
+       this.activeIndex = index
+    }
   }
 }).mount("#app");
+
+
+// al click sulla thumbnail images[index] della thumbnail si applica a images di carousel
