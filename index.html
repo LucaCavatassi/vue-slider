@@ -58,12 +58,12 @@
                 </div>
                 <!-- immagini interne -->
                   <img 
-                    v-for = "(image, index) in images"
+                    v-for = "(curImage, index) in images"
                     @click = "showOnClick(index)"
                     class="img-fluid my-thumbnail"
                     :class = "(index === activeIndex) ? 'active' : ''"
-                    :src='images[index].image'
-                    :alt="images[index].text"
+                    :src="curImage.image"
+                    :alt="curImage.text"
                   />
                 <!-- etc ... -->
               </div>

@@ -74,5 +74,4 @@ createApp({
   }
 }).mount("#app");
 
-
 // al click sulla thumbnail images[index] della thumbnail si applica a images di carousel
